@@ -1,0 +1,6 @@
+DATE = "18:13:27 August 02, 2013"
+QUARTUS_VERSION = "9.1"
+
+# Revisions
+
+PROJECT_REVISION = "reversi_FPGA"

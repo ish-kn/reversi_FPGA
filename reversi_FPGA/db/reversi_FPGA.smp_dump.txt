@@ -1,0 +1,67 @@
+
+State Machine - |reversi_FPGA|LCD_reversi:U10|mLCD_ST
+Name mLCD_ST.000011 mLCD_ST.000010 mLCD_ST.000001 mLCD_ST.000000 
+mLCD_ST.000000 0 0 0 0 
+mLCD_ST.000001 0 0 1 1 
+mLCD_ST.000010 0 1 0 1 
+mLCD_ST.000011 1 0 0 1 
+
+State Machine - |reversi_FPGA|LCD_reversi:U10|LCD_Controller:u0|ST
+Name ST.11 ST.10 ST.01 ST.00 
+ST.00 0 0 0 0 
+ST.01 0 0 1 1 
+ST.10 0 1 0 1 
+ST.11 1 0 0 1 
+
+State Machine - |reversi_FPGA|reversi:U0|cState
+Name cState.UPDATE cState.INPUT_WAIT cState.PRINT cState.IDLE cState.COMP 
+cState.IDLE 0 0 0 0 0 
+cState.PRINT 0 0 1 1 0 
+cState.INPUT_WAIT 0 1 0 1 0 
+cState.UPDATE 1 0 0 1 0 
+cState.COMP 0 0 0 1 1 
+
+State Machine - |reversi_FPGA|reversi:U0|input_rs232c:U_INPUT|cNextState
+Name cNextState.PARSE cNextState.INPUT_READ cNextState.PROMPT cNextState.IDLE cNextState.PRINT_CRLF 
+cNextState.IDLE 0 0 0 0 0 
+cNextState.PROMPT 0 0 1 1 0 
+cNextState.INPUT_READ 0 1 0 1 0 
+cNextState.PARSE 1 0 0 1 0 
+cNextState.PRINT_CRLF 0 0 0 1 1 
+
+State Machine - |reversi_FPGA|reversi:U0|input_rs232c:U_INPUT|cState
+Name cState.PARSE cState.INPUT_READ cState.PROMPT cState.IDLE cState.PRINT_CRLF 
+cState.IDLE 0 0 0 0 0 
+cState.PROMPT 0 0 1 1 0 
+cState.INPUT_READ 0 1 0 1 0 
+cState.PARSE 1 0 0 1 0 
+cState.PRINT_CRLF 0 0 0 1 1 
+
+State Machine - |reversi_FPGA|reversi:U0|input_rs232c:U_INPUT|rs232c_tx:RT|status
+Name status.0000 status.0010 status.0001 
+status.0000 0 0 0 
+status.0001 1 0 1 
+status.0010 1 1 0 
+
+State Machine - |reversi_FPGA|reversi:U0|print_rs232c:U_PRINT|cNextState
+Name cNextState.PRINT_CRLF cNextState.PRINT_VAL cNextState.PRINT_BAR cNextState.PRINT_LABEL cNextState.IDLE 
+cNextState.IDLE 0 0 0 0 0 
+cNextState.PRINT_LABEL 0 0 0 1 1 
+cNextState.PRINT_BAR 0 0 1 0 1 
+cNextState.PRINT_VAL 0 1 0 0 1 
+cNextState.PRINT_CRLF 1 0 0 0 1 
+
+State Machine - |reversi_FPGA|reversi:U0|print_rs232c:U_PRINT|cState
+Name cState.PRINT_CRLF cState.PRINT_VAL cState.PRINT_BAR cState.PRINT_LABEL cState.PRINT_INPUT cState.IDLE 
+cState.IDLE 0 0 0 0 0 0 
+cState.PRINT_INPUT 0 0 0 0 1 1 
+cState.PRINT_LABEL 0 0 0 1 0 1 
+cState.PRINT_BAR 0 0 1 0 0 1 
+cState.PRINT_VAL 0 1 0 0 0 1 
+cState.PRINT_CRLF 1 0 0 0 0 1 
+
+State Machine - |reversi_FPGA|reversi:U0|print_rs232c:U_PRINT|rs232c_tx:RT|status
+Name status.0000 status.0010 status.0001 
+status.0000 0 0 0 
+status.0001 1 0 1 
+status.0010 1 1 0 

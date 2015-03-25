@@ -1,0 +1,2 @@
+module cnt_data(Whitedata, BlackData,
+				cnt_white, cnt_black);
